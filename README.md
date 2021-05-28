@@ -30,8 +30,8 @@ All the possile CAPTCHA variants
 ### CaptchaImage
 
 The class `CaptchaImage` generates an Image with given Text or generated Text. The look of the CAPTCHA can be changed
-through the [default Arguments](####default-arguments:), [setting Arguments](####setting-arguments:) and diffrent
-[overwrites](####overwrites).
+through the [default Arguments](#default-arguments:), [setting Arguments](#setting-arguments:) and diffrent
+[overwrites](#overwrites).
 
 The most basic usage of this class looks like this:
 
@@ -60,7 +60,7 @@ char_amount | int | length of the random generated string | 12
 
 Name | Type | Description | Default
 --- | --- | --- | ---
-background | Background | sets a background on the captcha (see more under [Background](####background)) | None
+background | Background | sets a background on the captcha (see more under [Background](#background)) | None
 distortion | bool | distorts the text (Needs the numpy package) | False
 lines | int | adds the amount of lines between random Points | None
 points | int | adds the amount of points on random Points | None
@@ -71,7 +71,7 @@ frame | bool | adds a frame around the CAPTCHA | False
 The class `Background` has all modes for the setting `background`.
 
 The first mode is `Background.RANDOM`. It generates a random color in every Pixel of the background. The color is
-choosen from the list `CaptchaImage.colors` that can be [overwritten](####overwrites).
+choosen from the list `CaptchaImage.colors` that can be [overwritten](#overwrites).
 
 The second mode is `Background.COLOR`. It colors the background with the text color with only 50% alpha.
 
