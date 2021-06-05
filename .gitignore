@@ -1,0 +1,9 @@
+/dist
+/dist/*
+/build
+/build/*
+/bettercaptcha.egg-info
+/bettercaptcha.egg-info/*
+/.idea
+/.idea/*
+.gitignore
