@@ -6,67 +6,67 @@ from bettercaptcha import CaptchaImage, Background
 def test_basic_captcha():
     captcha = CaptchaImage()
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/basic.png', format='PNG')
 
 
 def test_color_captcha():
     captcha = CaptchaImage(color=(255, 0, 0))
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/color.png', format='PNG')
 
 
 def test_text_captcha():
     captcha = CaptchaImage(text="MagicaFreak")
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/text.png', format='PNG')
 
 
 def test_generated_text_captcha():
     captcha = CaptchaImage(char_amount=6)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/chars.png', format='PNG')
 
 
 def test_background_random_captcha():
     captcha = CaptchaImage(background=Background.RANDOM)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/bg_random.png', format='PNG')
 
 
 def test_background_color_captcha():
     captcha = CaptchaImage(background=Background.COLOR)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/bg_color.png', format='PNG')
 
 
 def test_background_custom_color_captcha():
     captcha = CaptchaImage(background=Background.COLOR, color=(128, 0, 64))
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/bg_custom_color.png', format='PNG')
 
 
 def test_distortion_captcha():
     captcha = CaptchaImage(distortion=True, font_size=50)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/distortion.png', format='PNG')
 
 
 def test_lines_captcha():
     captcha = CaptchaImage(lines=4)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/lines.png', format='PNG')
 
 
 def test_points_captcha():
     captcha = CaptchaImage(points=4)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/points.png', format='PNG')
 
 
 def test_frame_captcha():
     captcha = CaptchaImage(frame=True)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/frame.png', format='PNG')
 
 
 def test_everything_captcha():
@@ -74,25 +74,25 @@ def test_everything_captcha():
                            background=Background.RANDOM, distortion=True, lines=10,
                            points=15, frame=True)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/everything.png', format='PNG')
 
 
 def test_overwrite_distortion_captcha():
     captcha = CaptchaImage(distortion=True)
     captcha.distortion = lambda x, a, w: a * cos(5 * pi * x * w + 400)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/overwrite_distortion.png', format='PNG')
 
     captcha.distortion_factor = (0.5, 16)
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/overwrite_distortion_factor.png', format='PNG')
 
 
 def test_overwrite_random_colors_captcha():
     captcha = CaptchaImage(background=Background.RANDOM)
     captcha.colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
     captcha.create()
-    captcha.image.show()
+    captcha.image.save(f'../example/overwrite_bg_random.png', format='PNG')
 
 
 def test_default_random_chars():

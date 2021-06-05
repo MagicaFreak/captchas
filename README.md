@@ -13,7 +13,7 @@ pip install captcha-MagicaFreak
 Install with distortion setting:
 
 ```
-pip install bettercaptcha[numpy]
+pip install bettercaptcha[distortion]
 ```
 
 or

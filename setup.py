@@ -4,6 +4,7 @@ from bettercaptcha import __version__, __homepage__, __author__
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+
 setuptools.setup(
     name="bettercaptcha",
     version=__version__,
@@ -20,6 +21,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=["Pillow"],
-    extras_requrie={"numpy": ["numpy"]},
+    extras_require={"distortion": ["numpy"]},
     python_requires='>=3.6',
 )
