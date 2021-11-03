@@ -58,7 +58,10 @@ class CaptchaImage:
                  points: int = None, frame: bool = None):
 
         self.text = text or self.rand_chars(char_amount)
-        self.font: ImageFont = ImageFont.truetype(font or "arial.ttf", font_size)
+        try:
+            self.font: ImageFont = ImageFont.truetype(font or "arial.ttf", font_size)
+        except OSError:
+            self.font: ImageFont = ImageFont.load_default()
         self.color = color
         self.__textsize = self.font.getsize(self.text)
         self.size = (int(self.__textsize[0] * 1.2), int(self.__textsize[1] * 1.75))
